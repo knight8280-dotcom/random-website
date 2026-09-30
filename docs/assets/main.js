@@ -149,10 +149,10 @@
     }
   }
 
-  /* Contact topic from ?topic= */
+  /* Contact topic from contact.html#grading (or ?topic=grading) */
   const topic = document.querySelector("[data-topic]");
   if (topic) {
-    const wanted = new URLSearchParams(location.search).get("topic");
+    const wanted = location.hash.slice(1) || new URLSearchParams(location.search).get("topic");
     if (wanted && topic.querySelector(`option[value="${CSS.escape(wanted)}"]`)) topic.value = wanted;
   }
 

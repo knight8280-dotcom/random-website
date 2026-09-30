@@ -17,7 +17,7 @@ It's a static site with no framework and no dependencies. Every word lives in on
 | `pricing.html` | Every fee in six tables |
 | `sell.html` | Cash-offer request form, what we buy and pass on, the selling process, and selling FAQs |
 | `about.html` | Story, timeline, four promises, the team, and the stat line |
-| `contact.html` | Contact form (the `?topic=` query preselects the topic), phone, email, hours with today highlighted, and a map |
+| `contact.html` | Contact form (links like `contact.html#grading` preselect the topic), phone, email, hours with today highlighted, and a map |
 | `faq.html` | 14 questions in 4 groups, with FAQPage structured data |
 | `privacy.html`, `404.html` | The basics |
 

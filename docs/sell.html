@@ -122,16 +122,16 @@
       </div>
       <fieldset class="field">
         <legend>What years are in it? <span class="opt">check all that apply</span></legend>
-        <div class="chips"><label class="chip"><input type="checkbox" name="eras" value="Pre-1970 vintage"><span>Pre-1970 vintage</span></label><label class="chip"><input type="checkbox" name="eras" value="1970s"><span>1970s</span></label><label class="chip"><input type="checkbox" name="eras" value="1980s–early ’90s"><span>1980s–early ’90s</span></label><label class="chip"><input type="checkbox" name="eras" value="1995–2010"><span>1995–2010</span></label><label class="chip"><input type="checkbox" name="eras" value="2011–today"><span>2011–today</span></label></div>
+        <div class="chips"><label class="chip"><input type="checkbox" id="era-0" name="eras" value="Pre-1970 vintage"><span>Pre-1970 vintage</span></label><label class="chip"><input type="checkbox" id="era-1" name="eras" value="1970s"><span>1970s</span></label><label class="chip"><input type="checkbox" id="era-2" name="eras" value="1980s–early ’90s"><span>1980s–early ’90s</span></label><label class="chip"><input type="checkbox" id="era-3" name="eras" value="1995–2010"><span>1995–2010</span></label><label class="chip"><input type="checkbox" id="era-4" name="eras" value="2011–today"><span>2011–today</span></label></div>
       </fieldset>
       <fieldset class="field">
         <legend>Any graded cards or sealed wax?</legend>
         <div class="chips">
-          <label class="chip"><input type="radio" name="graded" value="Graded cards" required><span>Graded cards</span></label>
-          <label class="chip"><input type="radio" name="graded" value="Sealed wax"><span>Sealed wax</span></label>
-          <label class="chip"><input type="radio" name="graded" value="Both"><span>Both</span></label>
-          <label class="chip"><input type="radio" name="graded" value="Neither"><span>Neither</span></label>
-          <label class="chip"><input type="radio" name="graded" value="Not sure"><span>Not sure</span></label>
+          <label class="chip"><input type="radio" id="graded-graded" name="graded" value="Graded cards" required><span>Graded cards</span></label>
+          <label class="chip"><input type="radio" id="graded-wax" name="graded" value="Sealed wax"><span>Sealed wax</span></label>
+          <label class="chip"><input type="radio" id="graded-both" name="graded" value="Both"><span>Both</span></label>
+          <label class="chip"><input type="radio" id="graded-neither" name="graded" value="Neither"><span>Neither</span></label>
+          <label class="chip"><input type="radio" id="graded-unsure" name="graded" value="Not sure"><span>Not sure</span></label>
         </div>
       </fieldset>
       <div class="field">

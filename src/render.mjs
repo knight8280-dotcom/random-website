@@ -179,7 +179,7 @@ function footer(b) {
 
 export function layout({ title, description, depth = 0, current = "", body, bodyClass = "", head = "" }) {
   const b = "../".repeat(depth);
-  const fullTitle = title ? `${title} | ${site.name}` : `${site.name} | Baseball Card Shop in Columbus, OH`;
+  const fullTitle = title ? `${title} | ${site.name}` : site.name;
   return `<!doctype html>
 <html lang="en">
 <head>
@@ -308,7 +308,7 @@ function cardBack() {
   const rows = stats.rows
     .map(
       (r, i) =>
-        `<tr class="reveal-row" style="--i:${i}"><th scope="row">${r[0]}</th><td>COL</td>${r
+        `<tr><th scope="row">${r[0]}</th><td>COL</td>${r
           .slice(1)
           .map((v) => `<td>${fmt(v)}</td>`)
           .join("")}</tr>`,
@@ -856,16 +856,16 @@ ${pageHero({
       </div>
       <fieldset class="field">
         <legend>What years are in it? <span class="opt">check all that apply</span></legend>
-        <div class="chips">${eras.map((e, i) => `<label class="chip"><input type="checkbox" name="eras" value="${esc(e)}"><span>${esc(e)}</span></label>`).join("")}</div>
+        <div class="chips">${eras.map((e, i) => `<label class="chip"><input type="checkbox" id="era-${i}" name="eras" value="${esc(e)}"><span>${esc(e)}</span></label>`).join("")}</div>
       </fieldset>
       <fieldset class="field">
         <legend>Any graded cards or sealed wax?</legend>
         <div class="chips">
-          <label class="chip"><input type="radio" name="graded" value="Graded cards" required><span>Graded cards</span></label>
-          <label class="chip"><input type="radio" name="graded" value="Sealed wax"><span>Sealed wax</span></label>
-          <label class="chip"><input type="radio" name="graded" value="Both"><span>Both</span></label>
-          <label class="chip"><input type="radio" name="graded" value="Neither"><span>Neither</span></label>
-          <label class="chip"><input type="radio" name="graded" value="Not sure"><span>Not sure</span></label>
+          <label class="chip"><input type="radio" id="graded-graded" name="graded" value="Graded cards" required><span>Graded cards</span></label>
+          <label class="chip"><input type="radio" id="graded-wax" name="graded" value="Sealed wax"><span>Sealed wax</span></label>
+          <label class="chip"><input type="radio" id="graded-both" name="graded" value="Both"><span>Both</span></label>
+          <label class="chip"><input type="radio" id="graded-neither" name="graded" value="Neither"><span>Neither</span></label>
+          <label class="chip"><input type="radio" id="graded-unsure" name="graded" value="Not sure"><span>Not sure</span></label>
         </div>
       </fieldset>
       <div class="field">
@@ -1024,9 +1024,9 @@ ${pageHero({
       <fieldset class="field">
         <legend>Best way to reach you</legend>
         <div class="chips">
-          <label class="chip"><input type="radio" name="reach" value="email" checked><span>Email</span></label>
-          <label class="chip"><input type="radio" name="reach" value="call"><span>Phone call</span></label>
-          <label class="chip"><input type="radio" name="reach" value="text"><span>Text</span></label>
+          <label class="chip"><input type="radio" id="reach-email" name="reach" value="email" checked><span>Email</span></label>
+          <label class="chip"><input type="radio" id="reach-call" name="reach" value="call"><span>Phone call</span></label>
+          <label class="chip"><input type="radio" id="reach-text" name="reach" value="text"><span>Text</span></label>
         </div>
       </fieldset>
       <button class="btn btn--accent btn--lg btn--block" type="submit">Send my message</button>

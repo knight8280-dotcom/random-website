@@ -90,7 +90,7 @@ table { border-collapse: collapse; }
 
 /* ---------- header ---------- */
 
-.hdr { position: sticky; top: 0; z-index: 60; background: rgba(238, 241, 244, 0.88); -webkit-backdrop-filter: saturate(1.4) blur(14px); backdrop-filter: saturate(1.4) blur(14px); border-bottom: 1px solid transparent; transition: border-color 0.3s, box-shadow 0.3s; }
+.hdr { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 60; background: rgba(238, 241, 244, 0.88); -webkit-backdrop-filter: saturate(1.4) blur(14px); backdrop-filter: saturate(1.4) blur(14px); border-bottom: 1px solid transparent; transition: border-color 0.3s, box-shadow 0.3s; }
 .hdr.is-scrolled { border-color: var(--line); box-shadow: 0 10px 30px -18px rgba(14, 27, 46, 0.35); }
 .hdr__in { display: flex; align-items: center; gap: 24px; height: 74px; }
 
@@ -157,8 +157,9 @@ table { border-collapse: collapse; }
 
 /* ---------- reveal + motion primitives ---------- */
 
-.js .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.7s var(--ease), transform 0.7s var(--ease); transition-delay: calc(var(--i, 0) * 80ms); }
-.js .reveal.is-in { opacity: 1; transform: none; }
+/* Content rests visible; the reveal only slides it into place. */
+.js .reveal { transform: translateY(24px); transition: transform 0.8s var(--ease); transition-delay: calc(var(--i, 0) * 80ms); }
+.js .reveal.is-in { transform: none; }
 
 .words .w { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.08em; margin-bottom: -0.08em; }
 .words .w > span { display: inline-block; transform: translateY(108%); animation: rise 0.9s var(--ease) forwards; animation-delay: calc(var(--i) * 65ms + 120ms); }
@@ -315,8 +316,6 @@ table { border-collapse: collapse; }
 .cardback__table tbody tr:nth-child(even) { background: rgba(14, 27, 46, 0.05); }
 .cardback__table tbody th { font-weight: 700; }
 .cardback__table tfoot th, .cardback__table tfoot td { background: var(--accent); color: #fff; font: 900 1.2rem/1 var(--display); letter-spacing: 0.03em; padding-block: 10px; text-transform: uppercase; }
-.js .reveal-row { opacity: 0; transition: opacity 0.5s var(--ease); transition-delay: calc(var(--i) * 90ms + 250ms); }
-.cardback.is-in .reveal-row { opacity: 1; }
 .cardback__foot { display: grid; grid-template-columns: 1.3fr 1fr; gap: 16px; margin-top: 14px; align-items: start; }
 .cardback__trivia { margin: 0; padding: 12px 14px; border: 2px dashed rgba(196, 30, 58, 0.55); border-radius: 8px; font-size: 0.92rem; background: rgba(255, 255, 255, 0.55); }
 .cardback__trivia strong { color: var(--accent); font: 900 1.05rem/1 var(--display); text-transform: uppercase; margin-right: 4px; }
@@ -727,6 +726,6 @@ table { border-collapse: collapse; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; animation-delay: 0s !important; transition-duration: 0.01ms !important; transition-delay: 0s !important; }
   .ribbon__track, .live-dot::after, .tc__holo::before { animation: none !important; }
-  .js .reveal, .js .reveal-row { opacity: 1; transform: none; }
+  .js .reveal { transform: none; }
   .words .w > span { transform: none; }
 }

@@ -146,7 +146,7 @@ export const services = [
       ["You get slabs back", "Pick them up, have them shipped, or consign them straight from our case."],
     ],
     cta: "Start a grading order",
-    ctaHref: "contact.html?topic=grading",
+    ctaHref: "contact.html#grading",
   },
   {
     id: "consignment",
@@ -185,7 +185,7 @@ export const services = [
       ["You get paid", "Money lands every other Friday with a statement for every card sold."],
     ],
     cta: "Talk about consigning",
-    ctaHref: "contact.html?topic=consignment",
+    ctaHref: "contact.html#consignment",
   },
   {
     id: "breaks",
@@ -263,7 +263,7 @@ export const services = [
       ["You get a signed report", "It arrives within 10 business days, ready to hand to your agent or attorney."],
     ],
     cta: "Request an appraisal",
-    ctaHref: "contact.html?topic=appraisal",
+    ctaHref: "contact.html#appraisal",
   },
   {
     id: "sorting",
@@ -302,7 +302,7 @@ export const services = [
       ["You pick up organized boxes", "They come with a report of what you have and what’s still missing."],
     ],
     cta: "Book a sort",
-    ctaHref: "contact.html?topic=sorting",
+    ctaHref: "contact.html#sorting",
   },
   {
     id: "card-hunting",
@@ -341,7 +341,7 @@ export const services = [
       ["You approve it", "The card waits at the counter, or we ship it insured."],
     ],
     cta: "Start a want list",
-    ctaHref: "contact.html?topic=hunting",
+    ctaHref: "contact.html#hunting",
   },
 ];
 
